@@ -102,9 +102,9 @@ class _TasksHomePageState extends State<TasksHomePage> {
     if (_taskController.text.trim().isNotEmpty) {
       setState(() {
         _tasks.add(TaskItem(title: _taskController.text.trim()));
-        _taskController.clear(); // FORM DIKOSONGKAN (VALUENYA HILANG)
+        _taskController.clear();
       });
-      Navigator.pop(context); // Menutup popup bottom sheet
+      Navigator.pop(context);
     }
   }
 
@@ -155,7 +155,7 @@ class _TasksHomePageState extends State<TasksHomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Indicator Count
+          
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
             child: Container(
@@ -176,7 +176,6 @@ class _TasksHomePageState extends State<TasksHomePage> {
           ),
           const Divider(height: 1),
 
-          // Daftar Tugas
           Expanded(
             child: _tasks.isEmpty
                 ? Center(
@@ -236,7 +235,7 @@ class _TasksHomePageState extends State<TasksHomePage> {
                                   : TextDecoration.none,
                             ),
                           ),
-                          // Tombol hapus langsung di sebelah kanan
+                          
                           trailing: IconButton(
                             icon: const Icon(
                               Icons.delete_outline,
